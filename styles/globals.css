@@ -1,0 +1,13 @@
+@import url('./fonts/fonts.css');
+body{
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: 'Montserrat';
+}
+.logo{
+    font-family: 'Tilt Warp';
+}
+.clickable{
+    cursor: pointer;
+    user-select: none;
+}
