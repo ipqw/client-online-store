@@ -44,7 +44,7 @@ class Storage {
         return this._devices ? this._devices?.rows : []
     }
     getDevices = () => {
-        fetch(`http://localhost:5000/api/device?limit=${this.limit}`)
+        fetch(`${store.host}api/device?limit=${this.limit}`)
         .then(res => res.json())
         .then(res => this.setDevices(res))
         .catch(res => console.error('Server is not working'))

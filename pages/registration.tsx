@@ -40,7 +40,7 @@ const Registration = observer(() => {
         e.preventDefault()
         if(password.length > 5){
             if(password === confPassword){
-                fetch('http://localhost:5000/api/user/registration', {
+                fetch(`${store.host}api/user/registration`, {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
