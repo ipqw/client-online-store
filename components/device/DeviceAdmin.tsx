@@ -1,5 +1,5 @@
-//@ts-nocheck
 import { Button } from "@mui/material"
+import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import { useEffect, useState } from "react"
 import styled from "styled-components"

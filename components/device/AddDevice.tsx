@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { observer } from "mobx-react"
 import styled from "styled-components"
 import cross from '../../img/58253.png'

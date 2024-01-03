@@ -1,4 +1,3 @@
-//@ts-nocheck
 import styled from "styled-components"
 
 export const Properties = ({info = []}: {info: any}) => {

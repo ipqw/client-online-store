@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { Page } from "../components/Page"
 
 const Account = () => {

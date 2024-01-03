@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { Button } from "@mui/material"
 import { observer } from "mobx-react"
 import { useRouter } from "next/router"

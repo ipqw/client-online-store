@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { observer } from "mobx-react";
 import { useEffect, useState } from 'react'
 import styled from "styled-components";

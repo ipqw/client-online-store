@@ -1,12 +1,12 @@
-//@ts-nocheck
 import { observer } from "mobx-react";
 import styled from "styled-components";
 import { Page } from "../../components/Page";
 import { dataStore } from "../../store/data"
 import { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
+import { toJS } from "mobx";
 import SendIcon from '@mui/icons-material/Send';
-import { Button, Rating, TextField } from "@mui/material";
+import { Button, Input, Rating, TextField } from "@mui/material";
 import { store } from "../../store";
 
 const Review = observer(() => {

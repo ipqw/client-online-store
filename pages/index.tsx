@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { observer } from "mobx-react";
 import { useEffect } from "react";
 import { Page } from "../components/Page";

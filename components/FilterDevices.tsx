@@ -1,7 +1,8 @@
-//@ts-nocheck
 import { Input, MenuItem, Select } from "@mui/material"
 import { observer } from "mobx-react"
 import styled from "styled-components"
+import { store } from "../store"
+import { useEffect, useState } from "react";
 import { filterStore } from "../store/filter"
 import { dataStore } from "../store/data"
 

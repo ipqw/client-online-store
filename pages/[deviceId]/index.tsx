@@ -1,4 +1,4 @@
-//@ts-nocheck
+import { toJS } from "mobx";
 import { observer } from "mobx-react";
 import { useRouter } from "next/router";
 import styled from "styled-components";

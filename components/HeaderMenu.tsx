@@ -1,10 +1,10 @@
-//@ts-nocheck
 import { observer } from "mobx-react";
+import styled from "styled-components";
 import Button from '@mui/material/Button';
 import { store } from "../store";
 import { useRouter } from "next/router";
 import { Menu, MenuItem } from "@mui/material";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const HeaderMenu = observer(() => {
     let isAdmin = store.role === 'ADMIN' ? 'block' : 'none'
@@ -14,6 +14,9 @@ export const HeaderMenu = observer(() => {
         localStorage.setItem('id', '')
         store.setIsAuth(false)
         store.setRole('USER')
+    }
+    const redirectAdmin = () => {
+        router.replace('/admin')
     }
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl)
@@ -51,3 +54,6 @@ export const HeaderMenu = observer(() => {
     </div>
     )
 })
+const Wrapper = styled.div`
+    
+`

@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { observer } from "mobx-react"
 import Head from "next/head"
 import { ReactNode } from "react"
@@ -10,7 +9,7 @@ interface IProps {
     children: ReactNode
 }
 
-export const Page = observer(({children}: IProps | any) => {
+export const Page = observer(({children}: IProps) => {
     return(
         <PageWrapper>
             <Head>
