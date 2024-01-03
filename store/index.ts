@@ -18,7 +18,7 @@ class Storage {
     get isAuth(){
         return this._isAuth
     }
-    _host = 'https://server-online-store-psi.vercel.app/'
+    _host = 'http://45.67.58.173:5000/'
     get host(){
         return this._host
     }
