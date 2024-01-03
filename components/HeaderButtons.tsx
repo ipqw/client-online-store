@@ -1,5 +1,7 @@
 //@ts-nocheck
 import { observer } from "mobx-react";
+import { useEffect, useState } from 'react'
+import styled from "styled-components";
 import Button from '@mui/material/Button';
 import { store } from "../store";
 import { useRouter } from "next/router";
@@ -24,3 +26,6 @@ export const HeaderButtons = observer(() => {
         </>
     )
 })
+const Wrapper = styled.div`
+    
+`
