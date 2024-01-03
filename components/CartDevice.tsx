@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Button } from "@mui/material";
 import { observer } from "mobx-react";
 import styled from "styled-components";

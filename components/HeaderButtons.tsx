@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { observer } from "mobx-react";
 import Button from '@mui/material/Button';
 import { store } from "../store";

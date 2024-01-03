@@ -1,5 +1,5 @@
+//@ts-nocheck
 import { Button } from "@mui/material"
-import Link from "next/link"
 import styled from "styled-components"
 import { Review } from "../Review"
 

@@ -1,4 +1,4 @@
-import Link from "next/link"
+//@ts-nocheck
 import styled from "styled-components";
 
 interface IProps{

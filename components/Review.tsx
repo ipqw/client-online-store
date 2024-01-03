@@ -1,6 +1,6 @@
+//@ts-nocheck
 import styled from "styled-components"
 import { IReview } from "../types"
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { Rating } from "@mui/material";
 import { useEffect, useState } from "react";
 

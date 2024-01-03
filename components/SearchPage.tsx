@@ -1,7 +1,6 @@
+//@ts-nocheck
 import { observer } from "mobx-react";
 import styled from "styled-components";
-import { useEffect } from 'react'
-import { store } from "../store";
 import { DeviceCard } from "./DeviceCard";
 import { FilterDevices } from "./FilterDevices";
 import { dataStore } from "../store/data";

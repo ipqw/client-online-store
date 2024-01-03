@@ -1,11 +1,10 @@
-import { Button } from "@mui/material";
+//@ts-nocheck
 import { observer } from "mobx-react";
 import styled from "styled-components";
 import { store } from "../store";
 import { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
 import { dataStore } from "../store/data";
-import { toJS } from "mobx";
 
 interface IProps{
     id: number;

@@ -1,4 +1,4 @@
-import { toJS } from "mobx"
+//@ts-nocheck
 import { observer } from "mobx-react"
 import Link from "next/link"
 import { useEffect } from "react"

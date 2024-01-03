@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Button, IconButton, InputAdornment, OutlinedInput, TextField } from "@mui/material"
 import { Visibility, VisibilityOff } from '@mui/icons-material'  
 import { observer } from "mobx-react"

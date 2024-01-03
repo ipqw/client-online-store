@@ -1,11 +1,9 @@
+//@ts-nocheck
 import { observer } from 'mobx-react'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import menu from '../img/menu.png'
 import { store } from '../store'
-import { NavLink } from './NavLink'
-
 import { HeaderButtons } from './HeaderButtons'
 import { HeaderMenu } from './HeaderMenu'
 

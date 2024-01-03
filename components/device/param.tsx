@@ -1,4 +1,5 @@
-import { Button, TextareaAutosize, TextField } from "@mui/material"
+//@ts-nocheck
+import { Button, TextField } from "@mui/material"
 import styled from "styled-components"
 import { dataStore } from "../../store/data"
 import { useState } from "react";

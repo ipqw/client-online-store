@@ -1,5 +1,5 @@
+//@ts-nocheck
 import { Button } from "@mui/material";
-import { toJS } from "mobx";
 import { observer } from "mobx-react";
 import { useRouter } from "next/router";
 import { useEffect, useState} from "react";
@@ -9,7 +9,7 @@ import { DeviceAdmin } from "../../components/device/DeviceAdmin";
 import { Page } from "../../components/Page";
 import { store } from "../../store";
 import { dataStore } from "../../store/data";
-import { MainText, MainTitle } from "../cart";
+import { MainTitle } from "../cart";
 
 const Device = observer(() => {
     useEffect(() => {

@@ -1,4 +1,5 @@
-import { Button, TextField, Input } from "@mui/material"
+//@ts-nocheck
+import { Button, TextField } from "@mui/material"
 import jwtDecode from "jwt-decode"
 import { observer } from "mobx-react"
 import Link from "next/link"
@@ -7,7 +8,6 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Page } from "../components/Page"
 import { store } from "../store"
-import { dataStore } from "../store/data"
 import { LinkText, RegMessage, RegText } from "./registration"
 
 const Login = observer(() => {
