@@ -1,4 +1,3 @@
-import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import Link from "next/link"
 import { useEffect } from "react"
@@ -12,8 +11,11 @@ const cart = observer(() => {
     const cart: any = dataStore.cart
     const devices: any = cart.basket_devices || []
     useEffect(() => {
-        dataStore.getCart()
-    }, [])
+        if(!dataStore.cart?.id || dataStore.cart.userId !== Number(localStorage.getItem('id'))){
+            dataStore.getCart()
+            store.checkAuth()
+        }
+    }, [dataStore.cart])
     
     return(
         <Page>

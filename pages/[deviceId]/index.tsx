@@ -21,12 +21,16 @@ const DevicePage = observer(() => {
     const ratings = object?.ratings || []
     const addToCart = () => {
         if(store.isAuth){
-            const formData = new FormData()
-            formData.append('deviceId', id.toString())
-            formData.append('basketId', dataStore.cart.id.toString())
             fetch(`${store.host}api/basketdevice`, {
                 method: 'POST',
-                body: formData
+                mode: 'cors',
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify({
+                    deviceId: id,
+                    basketId: dataStore.cart.id
+                })
             })
             .then(res => res.json())
             .then(res => setIsAddToCart(true))
@@ -40,20 +44,24 @@ const DevicePage = observer(() => {
         setValue(newValue);
     };
     useEffect(() => {
-        dataStore.getDevice(id)
-        dataStore.getTypes()
-        dataStore.getBrands()
-        dataStore.getCart()
-        dataStore.getReviews(id)
-        setIsAddToCart(dataStore.isInCart(id))
-        store.checkAuth()
-    }, [id])
+        if(!dataStore.device?.id || dataStore.device?.id !== id){
+            dataStore.getDevice(id)
+            dataStore.getTypes()
+            dataStore.getBrands()
+            dataStore.getCart()
+            dataStore.getReviews(id)
+            setIsAddToCart(dataStore.isInCart(id))
+            store.checkAuth()
+        }
+    }, [id, dataStore.device])
     return(
         <Page>
             <Block>
                 <Wrapper>
                     <ImgBlock>
-                        <Image src={`${store.host}${object?.img}`} />
+                        {/* При поддержке сервером хранения файлов */}
+                        {/* <Image src={`${store.host}${object?.img}`} /> */}
+                        <Image />
                     </ImgBlock>
                     <Info>
                         <Title>{`${type?.name} ${brand?.name} ${object?.name}`}</Title>

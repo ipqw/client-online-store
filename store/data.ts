@@ -90,7 +90,7 @@ class Storage {
         .catch(res => console.error('Server is not working'))
     }
 
-    _cart = {id: 0, basket_devices: []}
+    _cart = {id: 0, basket_devices: [], userId: 0}
     get cart(){
         return this._cart
     }

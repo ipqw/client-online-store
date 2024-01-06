@@ -13,15 +13,14 @@ export const AddType = observer(() => {
     }
     const OnSumbit = (event: any) => {
         event.preventDefault()
-        const formData = new FormData()
-        formData.append('name', name)
         fetch(`${store.host}api/type`, {
             method: 'POST',
             mode: 'cors',
             headers: {
+                'Content-Type': "application/json",
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             },
-            body: formData
+            body: JSON.stringify({name})
         })
         .then(res => res.json())
         .then(res => {

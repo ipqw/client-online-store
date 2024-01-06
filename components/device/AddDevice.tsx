@@ -36,20 +36,19 @@ export const AddDevice = observer(() => {
     }
     const OnSumbit = (event: any) => {
         event.preventDefault()
-        const formData = new FormData()
-        formData.append('img', file)
-        formData.append('name', name)
-        formData.append('price', price)
-        formData.append('brandId', brand)   
-        formData.append('typeId', type)
-        formData.append('info', JSON.stringify(dataStore.params))
         fetch(`${store.host}api/device`, {
             method: 'POST',
-            mode: 'cors',
             headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
-            body: formData
+            body: JSON.stringify({
+                name,
+                price,
+                brandId: brand,
+                typeId: type,
+                info: JSON.stringify(dataStore.params)
+            })
         })
         .then(res => res.json())
         .then(res => {

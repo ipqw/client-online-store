@@ -17,13 +17,15 @@ const Review = observer(() => {
     const id: number = parseInt(router.query.deviceId as string) || 0;
     const [userId, setUserId] = useState<string | null>('0')
     useEffect(() => {
-        dataStore.getDevice(id)
-        dataStore.getTypes()
-        dataStore.getBrands()
-        dataStore.getCart()
-        dataStore.getReviews(id)
-        setUserId(dataStore.getUserId())
-    }, [id])
+        if(!dataStore.reviews[0]?.id){
+            dataStore.getDevice(id)
+            dataStore.getTypes()
+            dataStore.getBrands()
+            dataStore.getCart()
+            dataStore.getReviews(id)
+            setUserId(dataStore.getUserId())
+        }
+    }, [id, dataStore.reviews])
 
     const [isCreated, setIsCreated] = useState<boolean>(true)
 
@@ -48,16 +50,20 @@ const Review = observer(() => {
 
     const updateReview = () => {
         if(rating && author && review && reviewObject){
-            const formData = new FormData()
-            formData.append('rate', typeof rating == 'number' ? rating.toString() : '')
-            formData.append('userId', userId ? userId : '0')
-            formData.append('author', author ? author : '')
-            formData.append('deviceId', id.toString())
-            formData.append('text', review)
-            formData.append('id', reviewObject.id.toString())
             fetch(`${store.host}api/rating/update`, {
                 method: 'POST', 
-                body: formData
+                mode: 'cors',
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify({
+                    rate: rating,
+                    userId,
+                    author,
+                    deviceId: id,
+                    text: review,
+                    id: reviewObject.id
+                }),
             })
             .then(res => res.json())
             .then(res => router.back())
@@ -69,15 +75,19 @@ const Review = observer(() => {
     
     const createReview = () => {
         if(rating && author && review){
-            const formData = new FormData()
-            formData.append('rate', typeof rating == 'number' ? rating.toString() : '')
-            formData.append('userId', userId ? userId : '0')
-            formData.append('author', author ? author : '')
-            formData.append('deviceId', id.toString())
-            formData.append('text', review)
             fetch(`${store.host}api/rating`, {
                 method: 'POST',
-                body: formData
+                mode: 'cors',
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify({
+                    rate: rating,
+                    userId,
+                    author,
+                    deviceId: id,
+                    text: review,
+                }),
             })
             .then(res => res.json())
             .then(res => router.back())

@@ -15,11 +15,13 @@ export const CartDevice = observer(({deviceId, id}: {deviceId: number, id: numbe
             .then(res => setObject(res))
     }, [])
     const removeFromCart = () => {
-        const formData = new FormData()
-        formData.append('id', id.toString())
         fetch(`${store.host}api/basketdevice`, {
             method: 'DELETE',
-            body: formData
+            mode: 'cors',
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({id})
         })
         .then(res => dataStore.getCart())
     }
@@ -29,7 +31,9 @@ export const CartDevice = observer(({deviceId, id}: {deviceId: number, id: numbe
     return(
         <Wrapper>
             <ImgBlock>
-                <Image src={`${store.host}${object?.img}`}/>
+                {/* При поддержке сервером хранения файлов */}
+                {/* <Image src={`${store.host}${object?.img}`}/> */}
+                <Image />
             </ImgBlock>
             <Desc>
                 <About>

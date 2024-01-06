@@ -20,33 +20,13 @@ interface IProps{
 
 export const DeviceCard = observer(({id, name, img, price, rating, brandId, typeId, createdAt}: IProps) => {
     const router = useRouter()
-    const [isAddToCart, setIsAddToCart] = useState(dataStore.isInCart(id))
     const type = dataStore.types.find((el: any) => el.id == typeId) || {name: ''}    
-    useEffect(() => {
-        dataStore.getCart()
-        
-    }, [])
-    const cart: any = dataStore.cart
-
-    const addToCart = () => {
-        if(store.isAuth){
-            const formData = new FormData()
-            formData.append('deviceId', id.toString())
-            formData.append('basketId', cart.id)
-            fetch(`${store.host}api/basketdevice`, {
-                method: 'POST',
-                body: formData
-            })
-            .then(res => res.json())
-            .then(res => setIsAddToCart(true))
-            dataStore.getCart()
-        }
-        
-    }
     return(
         <Wrapper>
             <ImgBlock>
-                <Image src={`${store.host}${img}`}/>
+                {/* При поддержке сервером хранения файлов */}
+                {/* <Image src={`${store.host}${img}`}/> */}
+                <Image />
             </ImgBlock>
             <Desc>
                 <About>

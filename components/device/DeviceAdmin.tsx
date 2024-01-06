@@ -53,7 +53,9 @@ export const DeviceAdmin = observer((props: IProps) => {
             </DeviceDiv>
             <DeviceDivImage>
                 <ImgBlock>
-                    <Image src={`${store.host}${props.img}`}></Image>   
+                    {/* При поддержке сервером хранения файлов */}
+                    {/* <Image src={`${store.host}${props.img}`}></Image>    */}
+                    <Image />
                 </ImgBlock>
             </DeviceDivImage>
             <DeviceDiv>

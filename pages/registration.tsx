@@ -89,7 +89,7 @@ const Registration = observer(() => {
                         </InputAdornment>
                         } label="Password"/>
                         <RegText>Подтвердите пароль</RegText>
-                        <OutlinedInput value={confPassword} onInput={confirmPassword} id="outlined-adornment-password" type={showConfPassword ? 'text' : 'password'} endAdornment={
+                        <OutlinedInput value={confPassword} onInput={confirmPassword} id="outlined-adornment-confPassword" type={showConfPassword ? 'text' : 'password'} endAdornment={
                         <InputAdornment position="end">
                             <IconButton aria-label="toggle password visibility" onClick={handleClickShowConfPassword} onMouseDown={handleMouseDownPassword} edge="end">
                                 {showConfPassword ? <VisibilityOff /> : <Visibility />}
