@@ -1,4 +1,4 @@
-# Chess
+# Online store
 **В данном репозитории расположен клиент приложения Online store. 
 Серверная часть расположена в репозитории https://github.com/ipqw/server-online-store**
 
