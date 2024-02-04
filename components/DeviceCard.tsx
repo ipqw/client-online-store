@@ -2,15 +2,14 @@ import { Button } from "@mui/material";
 import { observer } from "mobx-react";
 import styled from "styled-components";
 import { store } from "../store";
-import { useState, useEffect } from 'react'
+import { FC } from 'react'
 import { useRouter } from "next/router";
 import { dataStore } from "../store/data";
-import { toJS } from "mobx";
 
 interface IProps{
     id: number;
     name: string;
-    img: string;
+    url: string;
     price: number;
     rating: number;
     createdAt: string;
@@ -18,15 +17,13 @@ interface IProps{
     brandId: number;
 }
 
-export const DeviceCard = observer(({id, name, img, price, rating, brandId, typeId, createdAt}: IProps) => {
+export const DeviceCard: FC<IProps> = observer(({id, name, url, price, typeId}) => {
     const router = useRouter()
     const type = dataStore.types.find((el: any) => el.id == typeId) || {name: ''}    
     return(
         <Wrapper>
             <ImgBlock>
-                {/* При поддержке сервером хранения файлов */}
-                {/* <Image src={`${store.host}${img}`}/> */}
-                <Image />
+                <Image src={url}/>
             </ImgBlock>
             <Desc>
                 <About>

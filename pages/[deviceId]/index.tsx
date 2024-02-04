@@ -59,9 +59,7 @@ const DevicePage = observer(() => {
             <Block>
                 <Wrapper>
                     <ImgBlock>
-                        {/* При поддержке сервером хранения файлов */}
-                        {/* <Image src={`${store.host}${object?.img}`} /> */}
-                        <Image />
+                        <Image src={object.url} />
                     </ImgBlock>
                     <Info>
                         <Title>{`${type?.name} ${brand?.name} ${object?.name}`}</Title>

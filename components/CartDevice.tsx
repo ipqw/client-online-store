@@ -8,14 +8,14 @@ import { useRouter } from "next/router";
 
 export const CartDevice = observer(({deviceId, id}: {deviceId: number, id: number}) => {
     const router = useRouter()
-    const [object, setObject] = useState({img: '', name: '', price: '', rating: ''})
+    const [object, setObject] = useState({img: '', name: '', price: '', rating: '', url: ''})
     useEffect(() => {
         fetch(`${store.host}api/device/${deviceId}`)
             .then(res => res.json())
             .then(res => setObject(res))
     }, [])
     const removeFromCart = () => {
-        fetch(`${store.host}api/basketdevice`, {
+        fetch(object.url, {
             method: 'DELETE',
             mode: 'cors',
             headers: {
@@ -26,14 +26,10 @@ export const CartDevice = observer(({deviceId, id}: {deviceId: number, id: numbe
         .then(res => dataStore.getCart())
     }
     
-    
-    
     return(
         <Wrapper>
             <ImgBlock>
-                {/* При поддержке сервером хранения файлов */}
-                {/* <Image src={`${store.host}${object?.img}`}/> */}
-                <Image />
+                <Image src={object.url}/>
             </ImgBlock>
             <Desc>
                 <About>

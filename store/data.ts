@@ -76,7 +76,7 @@ class Storage {
         this.params[index] = {title, description, index}
     }
 
-    _device: IObject = {brandId: 0, id: 0, createdAt: '', img: '', info: [], name: '', price: 0, rating: 0, ratings: [], typeId: 0, updatedAt: ''}
+    _device: IObject = {brandId: 0, id: 0, createdAt: '', url: '', info: [], name: '', price: 0, rating: 0, ratings: [], typeId: 0, updatedAt: ''}
     get device(){
         return this._device
     }

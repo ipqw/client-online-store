@@ -17,7 +17,7 @@ export const SearchPage = observer(() => {
             <FilterDevices />
             <DeviceWrapper>
                 {filteredType.map((el: any) => {                
-                    return <DeviceCard brandId={el.brandId} typeId={el.typeId} id={el.id} name={el.name} createdAt={el.createdAt} img={el.img} price={el.price} rating={el.rating} key={el.id} />   
+                    return <DeviceCard brandId={el.brandId} typeId={el.typeId} id={el.id} name={el.name} createdAt={el.createdAt} url={el.url} price={el.price} rating={el.rating} key={el.id} />   
                 })}
             </DeviceWrapper>
             

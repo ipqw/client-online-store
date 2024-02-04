@@ -19,7 +19,7 @@ export interface IObject {
     brandId: number,
     id: number,
     createdAt: string,
-    img: string,
+    url: string,
     info: object[],
     name: string,
     price: number,

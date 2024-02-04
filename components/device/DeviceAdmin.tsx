@@ -12,7 +12,7 @@ interface IProps {
     id: number,
     price: number,
     rating: number,
-    img: string,
+    url: string,
     createdAt: string,
     updatedAt: string,
     typeId: number,
@@ -53,9 +53,7 @@ export const DeviceAdmin = observer((props: IProps) => {
             </DeviceDiv>
             <DeviceDivImage>
                 <ImgBlock>
-                    {/* При поддержке сервером хранения файлов */}
-                    {/* <Image src={`${store.host}${props.img}`}></Image>    */}
-                    <Image />
+                    <Image src={props.url}></Image>   
                 </ImgBlock>
             </DeviceDivImage>
             <DeviceDiv>

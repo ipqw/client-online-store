@@ -53,7 +53,7 @@ const Device = observer(() => {
                                 <TableDiv>Управление</TableDiv>
                             </Devices>
                             {devices.map((el: any) => {
-                                return <DeviceAdmin id={el.id} key={el.id} rating={el.rating} img={el.img} createdAt={el.createdAt} updatedAt={el.updatedAt} typeId={el.typeId} brandId={el.brandId} price={el.price} name={el.name}/>
+                                return <DeviceAdmin id={el.id} key={el.id} rating={el.rating} url={el.url} createdAt={el.createdAt} updatedAt={el.updatedAt} typeId={el.typeId} brandId={el.brandId} price={el.price} name={el.name}/>
                             })}
                         </tbody>
                     </table>

@@ -1,22 +1,15 @@
 import { observer } from 'mobx-react'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import menu from '../img/menu.png'
 import { store } from '../store'
-import { NavLink } from './NavLink'
 
 import { HeaderButtons } from './HeaderButtons'
 import { HeaderMenu } from './HeaderMenu'
 
-
-
 export const Header = observer(() => {
-    let isAdmin = store.role === 'ADMIN' ? 'block' : 'none'
     const router = useRouter()
-    const redirectAdmin = () => {
-        router.replace('/admin')
-    }
+    
     const [windowSize, setWindowSize] = useState<number[]>([1920, 1080]);
     const handleWindowResize = () => {
         setWindowSize([window.innerWidth, window.innerHeight]);
@@ -49,13 +42,6 @@ const Wrapper = styled.div`
     padding: 0 15px;
     margin: 0;
     background-color: #ffffff;
-`
-const Block = styled.div`
-    display: none;
-    width: 280px;
-    @media screen and (min-width: 1100px){
-        display: block;
-    }
 `
 const Logo = styled.a`
     text-decoration: none;
