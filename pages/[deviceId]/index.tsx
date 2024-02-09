@@ -64,7 +64,7 @@ const DevicePage = observer(() => {
                     <Info>
                         <Title>{`${type?.name} ${brand?.name} ${object?.name}`}</Title>
                         <PriceDiv>
-                            <Price>{object?.price} ₽</Price>
+                            <Price>{object?.price} $</Price>
                             <Button onClick={isAddToCart ? () => {} : addToCart} style={{padding: 15}} variant="outlined">{isAddToCart ? 'Добавлено' : 'В корзину'}</Button>
                         </PriceDiv>
                     </Info>

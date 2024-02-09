@@ -29,7 +29,7 @@ export const DeviceCard: FC<IProps> = observer(({id, name, url, price, typeId}) 
                 <About>
                     <Type>{type.name}</Type>
                     <Name className="clickable" onClick={() => router.push(`${id}`)}>{name}</Name>
-                    <Price>₽{price}</Price>
+                    <Price>${price}</Price>
                 </About>
             </Desc>
         </Wrapper>
